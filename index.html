@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Temperature Converter - Celsius, Fahrenheit and Kelvin">
+
+    <title>Temperature Converter</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <div class="converter-card">
+
+            <!-- Header -->
+            <div class="header">
+
+                <div class="temperature-icon">
+                    🌡️
+                </div>
+
+                <p class="subtitle">
+                    SMART TEMPERATURE TOOL
+                </p>
+
+                <h1>
+                    Temperature Converter
+                </h1>
+
+                <p class="description">
+                    Convert temperatures between Celsius,
+                    Fahrenheit and Kelvin instantly.
+                </p>
+
+            </div>
+
+
+            <!-- Input Section -->
+            <form id="converterForm" novalidate>
+
+                <div class="form-group">
+
+                    <label for="temperature">
+                        Enter Temperature
+                    </label>
+
+                    <input
+                        type="number"
+                        id="temperature"
+                        name="temperature"
+                        placeholder="Enter temperature"
+                        step="any"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- Unit Selector -->
+                <div class="form-group">
+
+                    <label for="unit">
+                        Select Input Unit
+                    </label>
+
+                    <select id="unit" name="unit">
+
+                        <option value="C">
+                            Celsius (°C)
+                        </option>
+
+                        <option value="F">
+                            Fahrenheit (°F)
+                        </option>
+
+                        <option value="K">
+                            Kelvin (K)
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Error Message -->
+                <div
+                    id="errorMessage"
+                    class="error-message"
+                    role="alert"
+                    aria-live="polite">
+                </div>
+
+
+                <!-- Convert Button -->
+                <button
+                    type="submit"
+                    class="convert-btn">
+
+                    Convert Temperature
+
+                </button>
+
+            </form>
+
+
+            <!-- Results -->
+            <section
+                class="results"
+                id="results"
+                aria-live="polite">
+
+                <h2>
+                    Conversion Results
+                </h2>
+
+
+                <div class="result-grid">
+
+                    <!-- Celsius -->
+                    <div class="result-card">
+
+                        <div class="result-icon">
+                            🌡️
+                        </div>
+
+                        <div>
+                            <span>
+                                Celsius
+                            </span>
+
+                            <strong id="celsiusResult">
+                                --
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Fahrenheit -->
+                    <div class="result-card">
+
+                        <div class="result-icon">
+                            🔥
+                        </div>
+
+                        <div>
+                            <span>
+                                Fahrenheit
+                            </span>
+
+                            <strong id="fahrenheitResult">
+                                --
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Kelvin -->
+                    <div class="result-card">
+
+                        <div class="result-icon">
+                            ❄️
+                        </div>
+
+                        <div>
+                            <span>
+                                Kelvin
+                            </span>
+
+                            <strong id="kelvinResult">
+                                --
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Reset Button -->
+                <button
+                    type="button"
+                    id="resetBtn"
+                    class="reset-btn">
+
+                    Reset
+
+                </button>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Temperature Converter
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

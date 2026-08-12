@@ -1,0 +1,416 @@
+/* ========================================
+   GLOBAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9e8ff,
+            #f5f7ff,
+            #e6f7f5
+        );
+
+    color: #172033;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ========================================
+   MAIN PAGE
+======================================== */
+
+.page {
+    flex: 1;
+
+    min-height: calc(100vh - 60px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px 20px;
+}
+
+
+/* ========================================
+   CONVERTER CARD
+======================================== */
+
+.converter-card {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 45px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid #e4e6ef;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 70px rgba(30, 35, 60, 0.12);
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.temperature-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ecebff;
+
+    border-radius: 50%;
+
+    font-size: 2rem;
+}
+
+.subtitle {
+    margin-bottom: 10px;
+
+    color: #5b5be7;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.header h1 {
+    margin-bottom: 12px;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    line-height: 1.15;
+}
+
+.description {
+    color: #717b8d;
+
+    font-size: 0.95rem;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #31394b;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+
+/* Input + Select */
+
+input,
+select {
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border: 1px solid #dfe2ea;
+
+    border-radius: 10px;
+
+    background: #fafbfe;
+
+    color: #172033;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #5b5be7;
+
+    box-shadow:
+        0 0 0 3px rgba(91, 91, 231, 0.12);
+
+    background: white;
+}
+
+input::placeholder {
+    color: #a1a8b6;
+}
+
+
+/* ========================================
+   ERROR MESSAGE
+======================================== */
+
+.error-message {
+    min-height: 24px;
+
+    margin-bottom: 12px;
+
+    color: #d63636;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   CONVERT BUTTON
+======================================== */
+
+.convert-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #5b5be7;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.convert-btn:hover {
+    background: #4646c9;
+
+    transform: translateY(-2px);
+}
+
+.convert-btn:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   RESULTS
+======================================== */
+
+.results {
+    margin-top: 35px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #e8eaf0;
+}
+
+.results h2 {
+    margin-bottom: 20px;
+
+    font-size: 1.2rem;
+
+    text-align: center;
+}
+
+
+/* Result Grid */
+
+.result-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+/* Individual Result */
+
+.result-card {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+
+    padding: 18px 14px;
+
+    background: #f7f8fc;
+
+    border: 1px solid #e7e9f0;
+
+    border-radius: 12px;
+}
+
+.result-icon {
+    flex-shrink: 0;
+
+    font-size: 1.4rem;
+}
+
+.result-card span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #7b8494;
+
+    font-size: 0.7rem;
+}
+
+.result-card strong {
+    display: block;
+
+    color: #172033;
+
+    font-size: 1rem;
+
+    word-break: break-word;
+}
+
+
+/* ========================================
+   RESET BUTTON
+======================================== */
+
+.reset-btn {
+    display: block;
+
+    margin: 22px auto 0;
+
+    padding: 10px 25px;
+
+    border: 1px solid #dcdff0;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #5b5be7;
+
+    font-family: inherit;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.reset-btn:hover {
+    background: #f0efff;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    padding: 18px;
+
+    background: #171c2b;
+
+    color: #aeb5c4;
+
+    text-align: center;
+
+    font-size: 0.75rem;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 650px) {
+
+    .page {
+        padding: 30px 15px;
+    }
+
+    .converter-card {
+        padding: 30px 22px;
+
+        border-radius: 18px;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-card {
+        padding: 16px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .converter-card {
+        padding: 25px 17px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .description {
+        font-size: 0.85rem;
+    }
+
+    input,
+    select,
+    .convert-btn {
+        padding: 13px;
+    }
+}
